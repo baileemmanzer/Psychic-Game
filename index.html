@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>My First Object</title>
+  </head>
+  <body>
+    <div>
+        <p id="directions-text">Guess what letter I'm thinking of...</p>
+        <!--# of times the user has guessed the letter correctly-->
+        <p id="WinCount">Wins:</p>
+        <!--#of times the user has failed to guess the letter correctly-->
+        <p id="LossCount">Losses:</p>
+        <!--# of guesses left. This will update-->
+        <p id="GuessLeft">Guesses left:</p>
+        <!--the specific letters that the user typed. Display these until the user either wins or loses.-->
+        <p id="YourGuesses">Your guesses so far:</p>
+    </div>
+
+    <script>
+    var directionsText = document.getElementById("directions-text");
+
+
+      var car = {
+        make: "Honda",
+        model: "Fit",
+        color: "Blue Raspberry",
+        mileage: 3000,
+        isWorking: true,
+
+        driveToWork: function() {
+
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 8;
+
+          alert("New mileage: " + this.mileage);
+        },
+
+        driveAroundWorld: function() {
+
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 24000;
+
+          alert("New Mileage: " + this.mileage);
+          alert("Car needs a tuneup!");
+
+          this.isWorking = false;
+        },
+
+        getTuneUp: function() {
+          alert("Car is ready to go!");
+          this.isWorking = true;
+        },
+
+        honk: function() {
+          alert("Honk! Honk!");
+        }
+      };
+
+    document.onkeyup=function (event) {
+          
+        var userType = event.key.toLowerCase();
+        console.log(userType)
+        
+        if ((userType==="CompGuess") {
+
+            
+            if (userType==="a") {
+              car.driveToWork();
+              reWriteStats();
+            } 
+            
+          if (userType==="b") {
+              car.driveAroundWorld();
+              rewriteStats();
+            } 
+            
+          if (userType==="c") {
+              car.getTuneUp();
+              rewriteStats();
+            } 
+          if (userType==="d") {
+              car.honk();
+              reWriteStats();
+          }
+        }
+      }
+
+    </script>
+  
+
+    </body>
+</html>
